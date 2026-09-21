@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTrack | Personal Finance Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #172033;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(123, 92, 255, 0.23), transparent 24%),
+        radial-gradient(circle at 5% 94%, rgba(0, 194, 168, 0.18), transparent 26%),
+        linear-gradient(135deg, #edf3ff, #f9fbff);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.38;
+      background-image: radial-gradient(#9ba9c6 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: flex;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 250px;
+      padding: 28px 18px;
+      color: white;
+      background: linear-gradient(180deg, #182c61, #243e82 55%, #102552);
+      box-shadow: 5px 0 24px rgba(18, 38, 82, 0.16);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 12px 42px;
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00c2a8, #39d9c1);
+      box-shadow: 0 8px 18px rgba(0, 194, 168, 0.35);
+    }
+
+    .menu-title {
+      margin: 20px 14px 10px;
+      color: #aab9df;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    .nav-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 13px 14px;
+      margin: 6px 0;
+      border-radius: 11px;
+      color: #dce5ff;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      color: white;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-item.active {
+      border-left: 4px solid #27e0c4;
+      padding-left: 10px;
+    }
+
+    .upgrade-card {
+      margin-top: 45px;
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #7057df, #9f79ff);
+      box-shadow: 0 12px 24px rgba(8, 15, 51, 0.25);
+    }
+
+    .upgrade-card p {
+      margin: 8px 0 14px;
+      color: #eeeaff;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .upgrade-card button {
+      width: 100%;
+      border: 0;
+      padding: 10px;
+      border-radius: 8px;
+      color: #5136bf;
+      font-weight: 700;
+      cursor: pointer;
+      background: white;
+    }
+
+    main {
+      flex: 1;
+      padding: 28px 42px;
+      max-width: 1500px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .greeting h1 {
+      font-size: 28px;
+    }
+
+    .greeting p {
+      margin-top: 6px;
+      color: #65708a;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 7px 12px 7px 8px;
+      border: 1px solid #e2e8f6;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ff866b, #ef4e86);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(190px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid rgba(221, 229, 247, 0.85);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 30px rgba(66, 83, 120, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .summary-card {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .summary-card::after {
+      content: "";
+      position: absolute;
+      right: -25px;
+      bottom: -35px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      opacity: 0.13;
+      background: currentColor;
+    }
+
+    .summary-card .label {
+      color: #6c7690;
+      font-size: 14px;
+    }
+
+    .summary-card h2 {
+      margin: 10px 0 7px;
+      font-size: 27px;
+    }
+
+    .summary-card small {
+      font-weight: 600;
+    }
+
+    .income { color: #059b85; }
+    .expense { color: #df4b68; }
+    .balance { color: #5d43cb; }
+
+    .positive { color: #09a887; }
+    .negative { color: #e04d69; }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      font-size: 18px;
+    }
+
+    .section-header span {
+      color: #6650ce;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .chart-area {
+      height: 235px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 15px;
+      padding: 15px 0 0;
+      border-bottom: 1px solid #e2e7f2;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 46px,
+        #edf0f8 47px
+      );
+    }
+
+    .bar-group {
+      height: 100%;
+      flex: 1;
+      max-width: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar {
+      width: 100%;
+      min-height: 20px;
+      border-radius: 9px 9px 3px 3px;
+      background: linear-gradient(180deg, #755dff, #4c39bb);
+      box-shadow: 0 7px 13px rgba(98, 74, 209, 0.22);
+    }
+
+    .bar-group small {
+      color: #75809a;
+      font-size: 11px;
+    }
+
+    .budget-item {
+      margin-bottom: 20px;
+    }
+
+    .budget-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .budget-line span:last-child {
+      color: #6e7890;
+      font-size: 12px;
+    }
+
+    .progress {
+      height: 9px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #ebeff8;
+    }
+
+    .progress div {
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .food { width: 72%; background: linear-gradient(90deg, #ff9f5b, #ff6d72); }
+    .travel { width: 45%; background: linear-gradient(90deg, #6c8cff, #6550dd); }
+    .shopping { width: 82%; background: linear-gradient(90deg, #26c4ad, #00a98f); }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      padding-bottom: 12px;
+      color: #8490a8;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    td {
+      padding: 14px 0;
+      border-top: 1px solid #ecf0f7;
+    }
+
+    .merchant {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 600;
+    }
+
+    .merchant-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #edf1ff;
+    }
+
+    .amount-minus { color: #df4c67; font-weight: 700; }
+    .amount-plus { color: #069d83; font-weight: 700; }
+
+    .goal {
+      text-align: center;
+    }
+
+    .goal-circle {
+      width: 145px;
+      height: 145px;
+      display: grid;
+      place-items: center;
+      margin: 8px auto 16px;
+      border-radius: 50%;
+      background: conic-gradient(#00b99e 0 68%, #e6edf6 68% 100%);
+    }
+
+    .goal-inner {
+      width: 112px;
+      height: 112px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .goal-inner strong {
+      display: block;
+      font-size: 24px;
+    }
+
+    .goal-inner small {
+      color: #74809a;
+    }
+
+    .goal p {
+      color: #6e7891;
+      font-size: 13px;
+    }
+
+    @media (max-width: 950px) {
+      .sidebar { width: 76px; padding: 22px 10px; }
+      .brand span, .nav-item span, .menu-title, .upgrade-card { display: none; }
+      .brand { margin: 0 8px 35px; }
+      .nav-item { justify-content: center; }
+      main { padding: 24px; }
+      .dashboard-grid, .bottom-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 650px) {
+      .topbar { align-items: flex-start; gap: 15px; flex-direction: column; }
+      .summary-grid { grid-template-columns: 1fr; }
+      main { padding: 20px 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">₹</div>
+        <span>FinTrack</span>
+      </div>
+
+      <div class="menu-title">MAIN MENU</div>
+      <div class="nav-item active">⌂ <span>Dashboard</span></div>
+      <div class="nav-item">↕ <span>Transactions</span></div>
+      <div class="nav-item">▣ <span>Accounts</span></div>
+      <div class="nav-item">◔ <span>Analytics</span></div>
+
+      <div class="menu-title">PLANNING</div>
+      <div class="nav-item">◉ <span>Budget</span></div>
+      <div class="nav-item">◎ <span>Goals</span></div>
+      <div class="nav-item">⚙ <span>Settings</span></div>
+
+      <div class="upgrade-card">
+        <strong>Go Premium</strong>
+        <p>Get smarter financial insights and unlimited budgets.</p>
+        <button>Upgrade Now</button>
+      </div>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div class="greeting">
+          <h1>Good morning, Riya 👋</h1>
+          <p>Here is your financial overview for September.</p>
+        </div>
+
+        <div class="profile">
+          <div class="avatar">RS</div>
+          <div>
+            <strong>Riya Singh</strong><br />
+            <small style="color:#6e7891;">Personal Account</small>
+          </div>
+        </div>
+      </div>
+
+      <section class="summary-grid">
+        <div class="card summary-card balance">
+          <div class="label">Total Balance</div>
+          <h2>₹ 84,650.00</h2>
+          <small class="positive">↑ 8.4% from last month</small>
+        </div>
+
+        <div class="card summary-card income">
+          <div class="label">Monthly Income</div>
+          <h2>₹ 52,000.00</h2>
+          <small class="positive">↑ 4.2% from last month</small>
+        </div>
+
+        <div class="card summary-card expense">
+          <div class="label">Monthly Expenses</div>
+          <h2>₹ 18,740.00</h2>
+          <small class="negative">↑ 2.1% from last month</small>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="card">
+          <div class="section-header">
+            <h2>Income vs Expenses</h2>
+            <span>September 2026 ▾</span>
+          </div>
+
+          <div class="chart-area">
+            <div class="bar-group"><div class="bar" style="height: 48%;"></div><small>Mon</small></div>
+            <div class="bar-group"><div class="bar" style="height: 68%;"></div><small>Tue</small></div>
+            <div class="bar-group"><div class="bar" style="height: 42%;"></div><small>Wed</small></div>
+            <div class="bar-group"><div class="bar" style="height: 81%;"></div><small>Thu</small></div>
+            <div class="bar-group"><div class="bar" style="height: 57%;"></div><small>Fri</small></div>
+            <div class="bar-group"><div class="bar" style="height: 72%;"></div><small>Sat</small></div>
+            <div class="bar-group"><div class="bar" style="height: 61%;"></div><small>Sun</small></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-header">
+            <h2>Monthly Budget</h2>
+            <span>View all</span>
+          </div>
+
+          <div class="budget-item">
+            <div class="budget-line">
+              <strong>🍔 Food & Dining</strong>
+              <span>₹7,200 / ₹10,000</span>
+            </div>
+            <div class="progress"><div class="food"></div></div>
+          </div>
+
+          <div class="budget-item">
+            <div class="budget-line">
+              <strong>✈ Travel</strong>
+              <span>₹2,250 / ₹5,000</span>
+            </div>
+            <div class="progress"><div class="travel"></div></div>
+          </div>
+
+          <div class="budget-item">
+            <div class="budget-line">
+              <strong>🛍 Shopping</strong>
+              <span>₹8,200 / ₹10,000</span>
+            </div>
+            <div class="progress"><div class="shopping"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <div class="card">
+          <div class="section-header">
+            <h2>Recent Transactions</h2>
+            <span>See all</span>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>TRANSACTION</th>
+                <th>DATE</th>
+                <th>CATEGORY</th>
+                <th>AMOUNT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="merchant"><span class="merchant-icon">🛒</span>BigBasket</div></td>
+                <td>20 Sep 2026</td>
+                <td>Groceries</td>
+                <td class="amount-minus">- ₹1,240</td>
+              </tr>
+              <tr>
+                <td><div class="merchant"><span class="merchant-icon">💼</span>Salary Credit</div></td>
+                <td>18 Sep 2026</td>
+                <td>Income</td>
+                <td class="amount-plus">+ ₹52,000</td>
+              </tr>
+              <tr>
+                <td><div class="merchant"><span class="merchant-icon">🎬</span>Netflix</div></td>
+                <td>17 Sep 2026</td>
+                <td>Entertainment</td>
+                <td class="amount-minus">- ₹649</td>
+              </tr>
+              <tr>
+                <td><div class="merchant"><span class="merchant-icon">🚕</span>Uber</div></td>
+                <td>16 Sep 2026</td>
+                <td>Travel</td>
+                <td class="amount-minus">- ₹380</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card goal">
+          <div class="section-header">
+            <h2>Savings Goal</h2>
+            <span>•••</span>
+          </div>
+
+          <div class="goal-circle">
+            <div class="goal-inner">
+              <div>
+                <strong>68%</strong>
+                <small>Completed</small>
+              </div>
+            </div>
+          </div>
+
+          <strong>New Laptop Fund</strong>
+          <p>₹34,000 saved of ₹50,000</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
