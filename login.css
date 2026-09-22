@@ -1,31 +1,732 @@
-.box{
-    height: 250px;
-    width: 250px;
-    margin-left: 40%;
-    margin-top: 240px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 12%;
+```css
+/* ==============================
+   GENERAL PAGEe
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-#form{
-    margin-left: 25px;
-}
-form h1{
-    text-align: center;
-    padding-top: 20px;
-}
-body{
+
+body {
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f1f5ff, #e9e7ff);
+    color: #1d2942;
+}
+
+
+/* ==============================
+   SIDEBAR
+   SAME STYLE AS DASHBOARD
+   ============================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: linear-gradient(180deg, #1e3671, #263f80);
+
+    padding: 27px 18px;
+
+    color: white;
+
+    overflow-y: auto;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding-left: 12px;
+
+    margin-bottom: 45px;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    background: #16d5c0;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 18px rgba(22, 213, 192, 0.25);
+}
+
+.logo span {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+/* Menu */
+
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.menu-title {
+    color: #aebbd8;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin: 0 14px 12px;
+}
+
+
+.menu-item {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    color: #f2f5ff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Active Dashboard Tab */
+
+.menu-item:first-of-type {
+    background: rgba(255, 255, 255, 0.13);
+
+    border-left: 3px solid #19d8c4;
+}
+
+
+.menu-icon {
+    width: 12px;
+
     text-align: center;
 
+    font-size: 15px;
 }
-button{
-    width: 80px;
-    height: 30px;
-    background-color: bisque;
+
+
+/* ==============================
+   PREMIUM BOX
+   ============================== */
+
+.premium-box {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 20px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #7354e8, #9560f1);
+
+    overflow: hidden;
+}
+
+.premium-box h3 {
+    font-size: 15px;
+
+    margin-bottom: 6px;
+}
+
+.premium-box p {
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: #eeeaff;
+
+    margin-bottom: 12px;
+}
+
+.premium-box button {
     border: none;
-    font-size: 18px;
+
+    background: white;
+
+    color: #6848d7;
+
+    padding: 8px 12px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 }
-.u{
-    width: 230px;
+
+
+/* ==============================
+   MAIN CONTENT
+   ============================== */
+
+.main-content {
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 55px 42px 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==============================
+   LOGIN WRAPPER
+   ============================== */
+
+.login-wrapper {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    max-width: 1100px;
+
+    width: 100%;
+
+    margin: auto;
+}
+
+
+/* ==============================
+   WELCOME SECTION
+   ============================== */
+
+.welcome-section {
+    flex: 1;
+
+    max-width: 500px;
+}
+
+.welcome-small {
+    color: #6850df;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+
+.welcome-section h1 {
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+
+    color: #1c2942;
+}
+
+
+.welcome-section h1 span {
+    color: #6850df;
+}
+
+
+.welcome-text {
+    color: #6c7b9b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    max-width: 450px;
+
+    margin-bottom: 28px;
+}
+
+
+/* Features */
+
+.features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.feature-card {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid #dce3f5;
+
+    border-radius: 13px;
+
+    padding: 14px 16px;
+
+    width: 100%;
+}
+
+
+.feature-icon {
+    width: 40px;
     height: 40px;
+
+    border-radius: 10px;
+
+    background: #ebe7ff;
+
+    color: #6850df;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    font-weight: bold;
 }
+
+
+.feature-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.feature-card p {
+    color: #7a87a3;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   LOGIN CARD
+   ============================== */
+
+.login-card {
+    width: 390px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid #dce3f5;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 18px 45px rgba(53, 66, 120, 0.13);
+}
+
+
+/* Login Heading */
+
+.login-heading {
+    text-align: center;
+
+    margin-bottom: 27px;
+}
+
+
+.login-logo {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 13px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(135deg, #16d5c0, #13bfae);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(22, 213, 192, 0.22);
+}
+
+
+.login-heading h2 {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+
+.login-heading p {
+    color: #7a87a3;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   FORM
+   ============================== */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    color: #34415c;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d7deee;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    color: #25324b;
+
+    background: #fbfcff;
+}
+
+
+.form-group input:focus {
+    border-color: #6850df;
+
+    box-shadow: 0 0 0 3px rgba(104, 80, 223, 0.10);
+}
+
+
+.form-group input::placeholder {
+    color: #a4aec2;
+}
+
+
+/* ==============================
+   LOGIN OPTIONS
+   ============================== */
+
+.login-options {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin: 5px 0 22px;
+
+    font-size: 12px;
+}
+
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #6e7b96;
+}
+
+
+.remember input {
+    accent-color: #6850df;
+}
+
+
+.login-options a {
+    color: #6850df;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   LOGIN BUTTON
+   ============================== */
+
+.login-button {
+    width: 100%;
+
+    height: 47px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: linear-gradient(135deg, #6850df, #7659ed);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(104, 80, 223, 0.22);
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 10px 22px rgba(104, 80, 223, 0.30);
+}
+
+
+/* ==============================
+   DIVIDER
+   ============================== */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 22px 0;
+
+    color: #a1abc0;
+
+    font-size: 11px;
+}
+
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e1e5ef;
+}
+
+
+/* ==============================
+   DEMO BUTTON
+   ============================== */
+
+.demo-button {
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid #d7deee;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #6850df;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.demo-button:hover {
+    background: #f6f4ff;
+}
+
+
+/* ==============================
+   CREATE ACCOUNT
+   ============================== */
+
+.create-account {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    color: #7a87a3;
+}
+
+
+.create-account a {
+    color: #6850df;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    text-align: center;
+
+    color: #8490aa;
+
+    font-size: 11px;
+
+    padding-top: 15px;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 1000px) {
+
+    .login-wrapper {
+        gap: 35px;
+    }
+
+    .welcome-section h1 {
+        font-size: 34px;
+    }
+
+    .login-card {
+        width: 360px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+
+        padding: 35px 25px;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .welcome-section {
+        max-width: 550px;
+    }
+
+    .login-card {
+        width: 100%;
+
+        max-width: 390px;
+    }
+
+    .premium-box {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 25px 15px;
+    }
+
+    .welcome-section {
+        text-align: center;
+    }
+
+    .welcome-section h1 {
+        font-size: 30px;
+    }
+
+    .welcome-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login-card {
+        padding: 27px 22px;
+    }
+}
+```
