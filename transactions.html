@@ -1,0 +1,837 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinTrack - Transactions</title>
+
+    <!-- Transaction CSS -->
+    <link rel="stylesheet" href="transactions.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ₹
+            </div>
+
+            <span>FinTrack</span>
+
+        </div>
+
+
+        <!-- Main Menu -->
+
+        <div class="menu-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="dashboard.html">
+                <span class="menu-icon">⌂</span>
+                Dashboard
+            </a>
+
+
+            <a href="transactions.html" class="active">
+                <span class="menu-icon">↕</span>
+                Transactions
+            </a>
+
+
+            <a href="accounts.html">
+                <span class="menu-icon">▣</span>
+                Accounts
+            </a>
+
+
+            <a href="analytics.html">
+                <span class="menu-icon">◔</span>
+                Analytics
+            </a>
+
+        </nav>
+
+
+        <!-- Planning -->
+
+        <div class="menu-title planning-title">
+            PLANNING
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="budget.html">
+                <span class="menu-icon">◉</span>
+                Budget
+            </a>
+
+
+            <a href="goals.html">
+                <span class="menu-icon">◎</span>
+                Goals
+            </a>
+
+
+            <a href="settings.html">
+                <span class="menu-icon">⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- Premium Box -->
+
+        <div class="premium-box">
+
+            <h3>
+                Go Premium
+            </h3>
+
+            <p>
+                Unlock advanced financial
+                insights and features.
+            </p>
+
+            <button>
+                Upgrade Now
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1>
+                    Transaction History
+                </h1>
+
+                <p>
+                    View and manage all your financial transactions.
+                </p>
+
+            </div>
+
+
+            <!-- Profile -->
+
+            <div class="profile">
+
+                <div class="profile-circle">
+                    RS
+                </div>
+
+                <div>
+
+                    <strong>
+                        Riya Singh
+                    </strong>
+
+                    <small>
+                        Personal Account
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="summary-cards">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon income-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Income
+                    </p>
+
+                    <h2>
+                        ₹52,000
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon expense-icon">
+                    ↓
+                </div>
+
+                <div>
+
+                    <p>
+                        Total Expenses
+                    </p>
+
+                    <h2>
+                        ₹18,740
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon transfer-icon">
+                    ↔
+                </div>
+
+                <div>
+
+                    <p>
+                        Transfers
+                    </p>
+
+                    <h2>
+                        ₹7,500
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+    </section>
+
+
+
+        <!-- ================= TRANSACTION SECTION ================= -->
+
+        <section class="transaction-section">
+
+
+            <!-- Transaction Header -->
+
+            <div class="transaction-header">
+
+                <div>
+
+                    <h2>
+                        All Transactions
+                    </h2>
+
+                    <p>
+                        Recent activity from your accounts
+                    </p>
+
+                </div>
+
+
+                <button class="add-button">
+                    + Add Transaction
+                </button>
+
+            </div>
+
+
+
+            <!-- Search and Filters -->
+
+            <div class="filters">
+
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        placeholder="Search transactions">
+
+                </div>
+
+
+                <select>
+
+                    <option>
+                        All Types
+                    </option>
+
+                    <option>
+                        Income
+                    </option>
+
+                    <option>
+                        Expense
+                    </option>
+
+                    <option>
+                        Transfer
+                    </option>
+
+                </select>
+
+
+                <select>
+
+                    <option>
+                        All Accounts
+                    </option>
+
+                    <option>
+                        Savings Account
+                    </option>
+
+                    <option>
+                        Checking Account
+                    </option>
+
+                </select>
+
+
+                <select>
+
+                    <option>
+                        September 2026
+                    </option>
+
+                    <option>
+                        August 2026
+                    </option>
+
+                    <option>
+                        July 2026
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ================= TRANSACTION TABLE ================= -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                TRANSACTION
+                            </th>
+
+                            <th>
+                                ACCOUNT
+                            </th>
+
+                            <th>
+                                DATE
+                            </th>
+
+                            <th>
+                                TYPE
+                            </th>
+
+                            <th>
+                                AMOUNT
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- Transaction 1 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon food">
+                                        🍔
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Food & Dining
+                                        </strong>
+
+                                        <small>
+                                            Restaurant
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Savings Account
+                            </td>
+
+
+                            <td>
+                                Sep 21, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type expense">
+                                    Expense
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount expense-amount">
+                                - ₹1,250.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Transaction 2 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon salary">
+                                        ₹
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Monthly Salary
+                                        </strong>
+
+                                        <small>
+                                            Salary Credit
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Savings Account
+                            </td>
+
+
+                            <td>
+                                Sep 20, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type income">
+                                    Income
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount income-amount">
+                                + ₹52,000.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Transaction 3 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon shopping">
+                                        🛍
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Online Shopping
+                                        </strong>
+
+                                        <small>
+                                            Shopping
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Checking Account
+                            </td>
+
+
+                            <td>
+                                Sep 18, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type expense">
+                                    Expense
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount expense-amount">
+                                - ₹3,200.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Transaction 4 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon transfer">
+                                        ↔
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Account Transfer
+                                        </strong>
+
+                                        <small>
+                                            Savings → Checking
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Checking Account
+                            </td>
+
+
+                            <td>
+                                Sep 16, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type transfer">
+                                    Transfer
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount transfer-amount">
+                                ₹5,000.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Transaction 5 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon travel">
+                                        ✈
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Travel
+                                        </strong>
+
+                                        <small>
+                                            Transportation
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Checking Account
+                            </td>
+
+
+                            <td>
+                                Sep 14, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type expense">
+                                    Expense
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount expense-amount">
+                                - ₹2,250.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- Transaction 6 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="transaction-name">
+
+                                    <div class="transaction-icon freelance">
+                                        ₹
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Freelance Payment
+                                        </strong>
+
+                                        <small>
+                                            Other Income
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Savings Account
+                            </td>
+
+
+                            <td>
+                                Sep 10, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="type income">
+                                    Income
+                                </span>
+
+                            </td>
+
+
+                            <td class="amount income-amount">
+                                + ₹8,500.00
+                            </td>
+
+
+                            <td>
+
+                                <span class="status completed">
+                                    Completed
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- Pagination -->
+
+            <div class="pagination">
+
+                <span>
+                    Showing 1–6 of 24 transactions
+                </span>
+
+
+                <div class="page-buttons">
+
+                    <button>
+                        ‹
+                    </button>
+
+                    <button class="current">
+                        1
+                    </button>
+
+                    <button>
+                        2
+                    </button>
+
+                    <button>
+                        3
+                    </button>
+
+                    <button>
+                        4
+                    </button>
+
+                    <button>
+                        ›
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+```
