@@ -1,0 +1,759 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinTrack - Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ₹
+            </div>
+
+            <span>FinTrack</span>
+
+        </div>
+
+
+        <!-- MAIN MENU -->
+
+        <div class="menu-title">
+            MAIN MENU
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="dashboard.html" class="active">
+
+                <span class="menu-icon">
+                    ⌂
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="transactions.html">
+
+                <span class="menu-icon">
+                    ↕
+                </span>
+
+                Transactions
+
+            </a>
+
+
+            <a href="accounts.html">
+
+                <span class="menu-icon">
+                    ▣
+                </span>
+
+                Accounts
+
+            </a>
+
+
+            <a href="analytics.html">
+
+                <span class="menu-icon">
+                    ◔
+                </span>
+
+                Analytics
+
+            </a>
+
+        </nav>
+
+
+        <!-- PLANNING -->
+
+        <div class="menu-title planning-title">
+            PLANNING
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="budget.html">
+
+                <span class="menu-icon">
+                    ◉
+                </span>
+
+                Budget
+
+            </a>
+
+
+            <a href="goals.html">
+
+                <span class="menu-icon">
+                    ◎
+                </span>
+
+                Goals
+
+            </a>
+
+
+            <a href="settings.html">
+
+                <span class="menu-icon">
+                    ⚙
+                </span>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+
+        <!-- PREMIUM -->
+
+        <div class="premium-box">
+
+            <h3>
+                Go Premium
+            </h3>
+
+            <p>
+                Unlock advanced financial
+                insights and features.
+            </p>
+
+            <button>
+                Upgrade Now
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+
+            <div>
+
+                <h1>
+                    Good morning, Riya 👋
+                </h1>
+
+                <p>
+                    Here is your financial overview for September.
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile">
+
+                <div class="profile-circle">
+                    RS
+                </div>
+
+                <div>
+
+                    <strong>
+                        Riya Singh
+                    </strong>
+
+                    <small>
+                        Personal Account
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="summary-cards">
+
+
+            <!-- BALANCE -->
+
+            <div class="summary-card balance-card">
+
+                <div>
+
+                    <p>
+                        Total Balance
+                    </p>
+
+                    <h2>
+                        ₹ 84,650.00
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 8.4% from last month
+                    </span>
+
+                </div>
+
+                <div class="card-circle purple-circle"></div>
+
+            </div>
+
+
+            <!-- INCOME -->
+
+            <div class="summary-card income-card">
+
+                <div>
+
+                    <p>
+                        Monthly Income
+                    </p>
+
+                    <h2>
+                        ₹ 52,000.00
+                    </h2>
+
+                    <span class="positive">
+                        ↑ 4.2% from last month
+                    </span>
+
+                </div>
+
+                <div class="card-circle teal-circle"></div>
+
+            </div>
+
+
+            <!-- EXPENSE -->
+
+            <div class="summary-card expense-card">
+
+                <div>
+
+                    <p>
+                        Monthly Expenses
+                    </p>
+
+                    <h2>
+                        ₹ 18,740.00
+                    </h2>
+
+                    <span class="negative">
+                        ↑ 2.1% from last month
+                    </span>
+
+                </div>
+
+                <div class="card-circle pink-circle"></div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= CHART + BUDGET ================= -->
+
+        <section class="middle-section">
+
+
+            <!-- INCOME VS EXPENSES -->
+
+            <div class="chart-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Income vs Expenses
+                        </h2>
+
+                    </div>
+
+                    <select>
+
+                        <option>
+                            September 2026
+                        </option>
+
+                        <option>
+                            August 2026
+                        </option>
+
+                        <option>
+                            July 2026
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Simple Bar Chart -->
+
+                <div class="chart">
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 105px;">
+                        </div>
+
+                        <span>
+                            Mon
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 150px;">
+                        </div>
+
+                        <span>
+                            Tue
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 90px;">
+                        </div>
+
+                        <span>
+                            Wed
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 180px;">
+                        </div>
+
+                        <span>
+                            Thu
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 125px;">
+                        </div>
+
+                        <span>
+                            Fri
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 160px;">
+                        </div>
+
+                        <span>
+                            Sat
+                        </span>
+
+                    </div>
+
+
+                    <div class="bar-item">
+
+                        <div
+                            class="bar"
+                            style="height: 135px;">
+                        </div>
+
+                        <span>
+                            Sun
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MONTHLY BUDGET -->
+
+            <div class="budget-card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Monthly Budget
+                    </h2>
+
+                    <a href="budget.html">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <!-- FOOD -->
+
+                <div class="budget-item">
+
+                    <div class="budget-info">
+
+                        <strong>
+                            🍔 Food & Dining
+                        </strong>
+
+                        <span>
+                            ₹7,200 / ₹10,000
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-background">
+
+                        <div
+                            class="progress food-progress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRAVEL -->
+
+                <div class="budget-item">
+
+                    <div class="budget-info">
+
+                        <strong>
+                            ✈ Travel
+                        </strong>
+
+                        <span>
+                            ₹2,250 / ₹5,000
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-background">
+
+                        <div
+                            class="progress travel-progress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SHOPPING -->
+
+                <div class="budget-item">
+
+                    <div class="budget-info">
+
+                        <strong>
+                            🛍 Shopping
+                        </strong>
+
+                        <span>
+                            ₹8,200 / ₹10,000
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-background">
+
+                        <div
+                            class="progress shopping-progress">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BOTTOM SECTION ================= -->
+
+        <section class="bottom-section">
+
+
+            <!-- RECENT TRANSACTIONS -->
+
+            <div class="recent-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Transactions
+                        </h2>
+
+                        <p>
+                            Your latest financial activity
+                        </p>
+
+                    </div>
+
+                    <a href="transactions.html">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <!-- TRANSACTION 1 -->
+
+                <div class="recent-transaction">
+
+                    <div class="transaction-icon food">
+                        🍔
+                    </div>
+
+                    <div class="transaction-details">
+
+                        <strong>
+                            Food & Dining
+                        </strong>
+
+                        <small>
+                            Today • Savings Account
+                        </small>
+
+                    </div>
+
+                    <strong class="expense">
+                        - ₹1,250
+                    </strong>
+
+                </div>
+
+
+                <!-- TRANSACTION 2 -->
+
+                <div class="recent-transaction">
+
+                    <div class="transaction-icon salary">
+                        ₹
+                    </div>
+
+                    <div class="transaction-details">
+
+                        <strong>
+                            Monthly Salary
+                        </strong>
+
+                        <small>
+                            Sep 20 • Savings Account
+                        </small>
+
+                    </div>
+
+                    <strong class="income">
+                        + ₹52,000
+                    </strong>
+
+                </div>
+
+
+                <!-- TRANSACTION 3 -->
+
+                <div class="recent-transaction">
+
+                    <div class="transaction-icon shopping">
+                        🛍
+                    </div>
+
+                    <div class="transaction-details">
+
+                        <strong>
+                            Online Shopping
+                        </strong>
+
+                        <small>
+                            Sep 18 • Checking Account
+                        </small>
+
+                    </div>
+
+                    <strong class="expense">
+                        - ₹3,200
+                    </strong>
+
+                </div>
+
+
+                <!-- TRANSACTION 4 -->
+
+                <div class="recent-transaction">
+
+                    <div class="transaction-icon travel">
+                        ✈
+                    </div>
+
+                    <div class="transaction-details">
+
+                        <strong>
+                            Travel
+                        </strong>
+
+                        <small>
+                            Sep 14 • Checking Account
+                        </small>
+
+                    </div>
+
+                    <strong class="expense">
+                        - ₹2,250
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SAVINGS GOAL -->
+
+            <div class="goal-card">
+
+                <div class="card-header">
+
+                    <h2>
+                        Savings Goal
+                    </h2>
+
+                    <a href="goals.html">
+                        View all
+                    </a>
+
+                </div>
+
+
+                <div class="goal-content">
+
+                    <div class="goal-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        New Laptop
+                    </h3>
+
+                    <p>
+                        Target: ₹80,000
+                    </p>
+
+
+                    <div class="goal-amount">
+
+                        <strong>
+                            ₹48,000
+                        </strong>
+
+                        <span>
+                            60%
+                        </span>
+
+                    </div>
+
+
+                    <div class="goal-progress-background">
+
+                        <div class="goal-progress">
+                        </div>
+
+                    </div>
+
+
+                    <p class="goal-date">
+                        ₹32,000 remaining
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>
+```
+
