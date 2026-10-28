@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | Personal Finance</title>
+    <link rel="stylesheet" href="Analytics.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <span class="brand-icon">₹</span>
+                <span>FinTrack</span>
+            </div>
+
+            <p class="nav-label">WORKSPACE</p>
+
+            <nav class="nav">
+                <a href="Dashboard.html">▦ Dashboard</a>
+                <a href="Accounts.html">▣ Accounts</a>
+                <a href="TransactionHistory.html">⇄ Transactions</a>
+                <a href="IncomeExpense.html">↗ Income &amp; Expense</a>
+                <a href="Budget.html">◷ Budget</a>
+                <a href="SavingsGoals.html">◎ Savings Goals</a>
+                <a class="active" href="Analytics.html">▥ Analytics</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <strong>Need help?</strong>
+                <small>Manage your finances smarter.</small>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR MONEY, CLEARER</p>
+                    <h1>Analytics</h1>
+                    <p class="subtitle">
+                        Understand your financial habits at a glance.
+                    </p>
+                </div>
+
+                <div class="profile">
+                    <div class="avatar">R</div>
+                    <div>
+                        <strong>Riya</strong>
+                        <small>Personal account</small>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Period Selection -->
+            <section class="toolbar">
+                <div>
+                    <span class="period-dot"></span>
+                    <strong>Financial overview</strong>
+                    <span class="muted"> · Sample data</span>
+                </div>
+
+                <select aria-label="Select period">
+                    <option>Last 6 months</option>
+                    <option>Last 30 days</option>
+                    <option>This year</option>
+                </select>
+            </section>
+
+            <!-- Financial Summary Cards -->
+            <section class="summary-grid">
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span class="card-label">Total Income</span>
+                        <span class="metric-icon income-icon">↙</span>
+                    </div>
+                    <div class="metric">₹48,500</div>
+                    <div class="metric-foot">
+                        <span class="trend positive">↗ 8.2%</span>
+                        <span>vs. previous period</span>
+                    </div>
+                    <div class="mini-line green-line">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span class="card-label">Total Expenses</span>
+                        <span class="metric-icon expense-icon">↗</span>
+                    </div>
+                    <div class="metric">₹29,750</div>
+                    <div class="metric-foot">
+                        <span class="trend negative">↗ 3.4%</span>
+                        <span>vs. previous period</span>
+                    </div>
+                    <div class="mini-line coral-line">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span class="card-label">Net Savings</span>
+                        <span class="metric-icon savings-icon">✦</span>
+                    </div>
+                    <div class="metric">₹18,750</div>
+                    <div class="metric-foot">
+                        <span class="trend positive">38.7%</span>
+                        <span>of total income</span>
+                    </div>
+                    <div class="mini-line purple-line">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                </article>
+
+                <article class="summary-card">
+                    <div class="card-top">
+                        <span class="card-label">Savings Rate</span>
+                        <span class="metric-icon rate-icon">%</span>
+                    </div>
+                    <div class="metric">38.7%</div>
+                    <div class="metric-foot">
+                        <span class="trend positive">On track</span>
+                        <span>Goal: 30%</span>
+                    </div>
+                    <div class="progress">
+                        <span style="width: 77.4%"></span>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-grid">
+
+                <!-- Income vs Expenses -->
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Income vs. Expenses</h2>
+                            <p>Compare money coming in and going out.</p>
+                        </div>
+
+                        <div class="legend">
+                            <span><i class="legend-income"></i>Income</span>
+                            <span><i class="legend-expense"></i>Expenses</span>
+                        </div>
+                    </div>
+
+                    <div class="chart-area">
+                        <div class="y-labels">
+                            <span>₹15k</span>
+                            <span>₹10k</span>
+                            <span>₹5k</span>
+                            <span>₹0</span>
+                        </div>
+
+                        <div class="bar-chart">
+                            <div class="grid-lines">
+                                <i></i><i></i><i></i><i></i>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:72%"></span>
+                                    <span class="bar expense-bar" style="height:48%"></span>
+                                </div>
+                                <small>May</small>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:82%"></span>
+                                    <span class="bar expense-bar" style="height:54%"></span>
+                                </div>
+                                <small>Jun</small>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:67%"></span>
+                                    <span class="bar expense-bar" style="height:44%"></span>
+                                </div>
+                                <small>Jul</small>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:90%"></span>
+                                    <span class="bar expense-bar" style="height:61%"></span>
+                                </div>
+                                <small>Aug</small>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:76%"></span>
+                                    <span class="bar expense-bar" style="height:52%"></span>
+                                </div>
+                                <small>Sep</small>
+                            </div>
+
+                            <div class="month-group">
+                                <div class="bars">
+                                    <span class="bar income-bar" style="height:96%"></span>
+                                    <span class="bar expense-bar" style="height:60%"></span>
+                                </div>
+                                <small>Oct</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-note">
+                        ✓ You saved more than you spent in each month shown.
+                    </div>
+                </article>
+
+                <!-- Expense Breakdown -->
+                <article class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Expense Breakdown</h2>
+                            <p>Where your money goes.</p>
+                        </div>
+                    </div>
+
+                    <div class="donut-wrap">
+                        <div class="donut">
+                            <div class="donut-center">
+                                <strong>₹29,750</strong>
+                                <span>Total spent</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-list">
+                        <div class="category-row">
+                            <span class="category-name">
+                                <i class="dot housing"></i>Housing
+                            </span>
+                            <strong>₹10,400 <small>35%</small></strong>
+                        </div>
+
+                        <div class="category-row">
+                            <span class="category-name">
+                                <i class="dot food"></i>Food &amp; Dining
+                            </span>
+                            <strong>₹7,438 <small>25%</small></strong>
+                        </div>
+
+                        <div class="category-row">
+                            <span class="category-name">
+                                <i class="dot travel"></i>Transport
+                            </span>
+                            <strong>₹4,463 <small>15%</small></strong>
+                        </div>
+
+                        <div class="category-row">
+                            <span class="category-name">
+                                <i class="dot bills"></i>Bills &amp; Utilities
+                            </span>
+                            <strong>₹4,463 <small>15%</small></strong>
+                        </div>
+
+                        <div class="category-row">
+                            <span class="category-name">
+                                <i class="dot other"></i>Other
+                            </span>
+                            <strong>₹2,986 <small>10%</small></strong>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Spending and Insights -->
+            <section class="bottom-grid">
+
+                <article class="panel spending-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Spending by Category</h2>
+                            <p>Track the biggest parts of your budget.</p>
+                        </div>
+                        <a href="IncomeExpense.html" class="text-link">
+                            View transactions →
+                        </a>
+                    </div>
+
+                    <div class="spend-item">
+                        <div class="spend-info">
+                            <span>Housing</span>
+                            <strong>₹10,400</strong>
+                        </div>
+                        <div class="spend-track">
+                            <span class="spend-housing" style="width:100%"></span>
+                        </div>
+                    </div>
+
+                    <div class="spend-item">
+                        <div class="spend-info">
+                            <span>Food &amp; Dining</span>
+                            <strong>₹7,438</strong>
+                        </div>
+                        <div class="spend-track">
+                            <span class="spend-food" style="width:71.5%"></span>
+                        </div>
+                    </div>
+
+                    <div class="spend-item">
+                        <div class="spend-info">
+                            <span>Transport</span>
+                            <strong>₹4,463</strong>
+                        </div>
+                        <div class="spend-track">
+                            <span class="spend-transport" style="width:42.9%"></span>
+                        </div>
+                    </div>
+
+                    <div class="spend-item">
+                        <div class="spend-info">
+                            <span>Bills &amp; Utilities</span>
+                            <strong>₹4,463</strong>
+                        </div>
+                        <div class="spend-track">
+                            <span class="spend-bills" style="width:42.9%"></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="insight-card">
+                    <div class="insight-heading">
+                        <span class="insight-spark">✦</span>
+                        SMART INSIGHT
+                    </div>
+
+                    <h2>You're building a healthy saving habit.</h2>
+
+                    <p>
+                        Your savings rate is <strong>38.7%</strong>,
+                        above your 30% target. Keep tracking your
+                        spending to stay on course.
+                    </p>
+
+                    <div class="insight-footer">
+                        <span>Monthly savings goal</span>
+                        <strong>77% of ₹24,000</strong>
+                    </div>
+
+                    <div class="insight-progress">
+                        <span style="width:77%"></span>
+                    </div>
+
+                    <a href="SavingsGoals.html">
+                        Review savings goals →
+                    </a>
+                </article>
+
+            </section>
+
+            <footer>
+                FinTrack Analytics · Demo figures for display only
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
