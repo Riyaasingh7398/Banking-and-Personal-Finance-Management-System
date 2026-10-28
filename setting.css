@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    color: #203b73;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    color: #203b73;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #718096;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    margin: 20px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px #dce3f5;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+}
+
+input:not([type="checkbox"]), select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #dce3f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #7955e8;
+    color: white;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
