@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Management</title>
+    <link rel="stylesheet" href="Budget.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>FinTrack</h2>
+        <p class="menu-title">MAIN MENU</p>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Accounts.html">Accounts</a>
+        <a href="Transactions.html">Transactions</a>
+        <a href="Analytics.html">Analytics</a>
+        <a href="Goals.html">Goals</a>
+        <a href="Budget.html" class="active">Budget</a>
+        <a href="Settings.html">Settings</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Budget Management</h1>
+                <p>Plan your spending and manage your money wisely.</p>
+            </div>
+            <button id="refreshBtn">Refresh</button>
+        </header>
+
+        <section class="summary">
+            <div class="card">
+                <p>Total Budget</p>
+                <h2 id="totalBudget">₹0</h2>
+            </div>
+            <div class="card">
+                <p>Total Spent</p>
+                <h2 id="totalSpent">₹0</h2>
+            </div>
+            <div class="card">
+                <p>Remaining Budget</p>
+                <h2 id="remainingBudget">₹0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Create a Budget</h2>
+            <form id="budgetForm">
+                <input type="text" id="category"
+                       placeholder="Category (Food, Travel...)" required>
+
+                <input type="number" id="limit"
+                       placeholder="Budget limit (₹)"
+                       min="0.01" step="0.01" required>
+
+                <input type="month" id="budgetMonth" required>
+
+                <button type="submit">+ Add Budget</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Your Budgets</h2>
+            <div id="budgetList"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Budget Tips</h2>
+            <ul class="tips">
+                <li>Set realistic spending limits for each category.</li>
+                <li>Review your expenses regularly.</li>
+                <li>Try to keep your spending below your budget.</li>
+                <li>Save some money for unexpected expenses.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="Budget.js"></script>
+</body>
+</html>
