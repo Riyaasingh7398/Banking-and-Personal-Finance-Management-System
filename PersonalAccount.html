@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Account - FinTrack</title>
+    <link rel="stylesheet" href="PersonalAccount.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2 class="logo">₹ FinTrack</h2>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <a href="Dashboard.html" class="menu-item">⌂ Dashboard</a>
+        <a href="Transactions.html" class="menu-item">↕ Transactions</a>
+        <a href="Accounts.html" class="menu-item">▣ Accounts</a>
+        <a href="Analytics.html" class="menu-item">◉ Analytics</a>
+
+        <p class="menu-heading">PLANNING</p>
+
+        <a href="Budget.html" class="menu-item">◉ Budget</a>
+        <a href="Goals.html" class="menu-item">◎ Goals</a>
+        <a href="Settings.html" class="menu-item">⚙ Settings</a>
+
+        <div class="premium">
+            <h3>Go Premium</h3>
+            <p>Unlock advanced financial insights and features.</p>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1>Personal Account</h1>
+                <p>Manage your personal information and account details.</p>
+            </div>
+
+            <div class="profile-small">
+                <span class="avatar">RS</span>
+                <div>
+                    <strong>Riya Singh</strong>
+                    <p>Personal Account</p>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Profile Section -->
+        <section class="profile-card">
+
+            <div class="profile-cover">
+                <div class="large-avatar">RS</div>
+                <div>
+                    <h2 id="displayName">Riya Singh</h2>
+                    <p>Personal Account Holder</p>
+                </div>
+            </div>
+
+            <div class="profile-details">
+
+                <h2>Personal Information</h2>
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName"
+                                placeholder="Enter your name" value="Riya Singh" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email"
+                                placeholder="Enter your email" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone"
+                                placeholder="Enter your phone number" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Account Type</label>
+                            <input type="text" value="Personal Account" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" id="location"
+                                placeholder="Enter your location" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Currency</label>
+                            <input type="text" value="Indian Rupee (₹)" disabled>
+                        </div>
+
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" id="editBtn" class="edit-btn">
+                            Edit Profile
+                        </button>
+
+                        <button type="submit" id="saveBtn" class="save-btn" hidden>
+                            Save Changes
+                        </button>
+
+                        <button type="button" id="cancelBtn" class="cancel-btn" hidden>
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+                <p id="statusMessage"></p>
+
+            </div>
+        </section>
+
+
+        <!-- Account Overview -->
+        <h2 class="section-title">Account Overview</h2>
+
+        <section class="overview-grid">
+
+            <div class="overview-card purple">
+                <p>Total Balance</p>
+                <h2>₹ 84,650.00</h2>
+                <span>Available Balance</span>
+            </div>
+
+            <div class="overview-card green">
+                <p>Monthly Income</p>
+                <h2>₹ 52,000.00</h2>
+                <span>Your monthly earnings</span>
+            </div>
+
+            <div class="overview-card pink">
+                <p>Monthly Expenses</p>
+                <h2>₹ 18,740.00</h2>
+                <span>Your monthly spending</span>
+            </div>
+
+        </section>
+
+
+        <!-- Preferences and Security -->
+        <section class="bottom-grid">
+
+            <div class="info-card">
+                <h2>Personal Preferences</h2>
+
+                <div class="info-row">
+                    <span>Preferred Currency</span>
+                    <strong>INR (₹)</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Account Type</span>
+                    <strong>Personal</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Theme</span>
+                    <strong>Light Mode</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Notifications</span>
+                    <strong>Enabled</strong>
+                </div>
+            </div>
+
+
+            <div class="info-card">
+                <h2>Account Security</h2>
+
+                <div class="info-row">
+                    <span>Password</span>
+                    <strong>••••••••</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Account Status</span>
+                    <strong class="active-status">Active</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Account Privacy</span>
+                    <strong>Private</strong>
+                </div>
+
+                <button class="logout-btn" id="logoutBtn">
+                    Logout
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="PersonalAccount.js"></script>
+</body>
+</html>
