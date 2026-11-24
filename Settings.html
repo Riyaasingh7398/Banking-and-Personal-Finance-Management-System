@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Settings</title>
+    <link rel="stylesheet" href="Settings.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">₹</div>
+            <h2>FinTrack</h2>
+        </div>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="Dashboard.html" data-tab="dashboard">⌂ Dashboard</a>
+            <a href="Transactions.html" data-tab="transactions">↕ Transactions</a>
+            <a href="Accounts.html" data-tab="accounts">▣ Accounts</a>
+            <a href="Analytics.html" data-tab="analytics">◔ Analytics</a>
+
+            <p class="menu-title">PLANNING</p>
+
+            <a href="Budget.html" data-tab="budget">◉ Budget</a>
+            <a href="Goals.html" data-tab="goals">◎ Goals</a>
+            <a href="Settings.html" class="active" data-tab="settings">⚙ Settings</a>
+        </nav>
+
+        <div class="premium">
+            <h3>Go Premium</h3>
+            <p>Unlock advanced financial insights and features.</p>
+            <button>Upgrade Now</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="top-header">
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your account and personalize your FinTrack experience.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">RS</div>
+                <div>
+                    <strong>Riya Singh</strong>
+                    <small>Personal Account</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- SETTINGS TABS -->
+        <div class="settings-tabs">
+            <button class="tab-btn active" data-section="profile">Profile</button>
+            <button class="tab-btn" data-section="appearance">Appearance</button>
+            <button class="tab-btn" data-section="notifications">Notifications</button>
+            <button class="tab-btn" data-section="security">Security</button>
+            <button class="tab-btn" data-section="preferences">Preferences</button>
+        </div>
+
+        <!-- PROFILE -->
+        <section class="settings-section active" id="profile">
+            <div class="card">
+                <h2>Personal Information</h2>
+                <p class="subtitle">Update your personal account details.</p>
+
+                <div class="profile-header">
+                    <div class="big-avatar">RS</div>
+                    <div>
+                        <h3>Riya Singh</h3>
+                        <p>Personal Account</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" value="Riya Singh">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="email" value="riya@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" value="+91 9876543210">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account Type</label>
+                        <input type="text" value="Personal Account" disabled>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPEARANCE -->
+        <section class="settings-section" id="appearance">
+            <div class="card">
+                <h2>Appearance</h2>
+                <p class="subtitle">Customize how FinTrack looks on your device.</p>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Dark Mode</h3>
+                        <p>Switch between light and dark themes.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="darkMode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Accent Color</h3>
+                        <p>Choose your dashboard highlight color.</p>
+                    </div>
+                    <input type="color" id="accentColor" value="#7155e8">
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Compact Layout</h3>
+                        <p>Reduce spacing between elements.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="compactMode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTIFICATIONS -->
+        <section class="settings-section" id="notifications">
+            <div class="card">
+                <h2>Notifications</h2>
+                <p class="subtitle">Choose which notifications you want to receive.</p>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Transaction Alerts</h3>
+                        <p>Notify me whenever a transaction is recorded.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="transactionAlerts" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Budget Alerts</h3>
+                        <p>Alert me when I reach 80% of my budget.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="budgetAlerts" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Email Notifications</h3>
+                        <p>Receive financial summaries through email.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="emailAlerts">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Monthly Report</h3>
+                        <p>Receive a monthly income and expense report.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="monthlyReport" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="settings-section" id="security">
+            <div class="card">
+                <h2>Security</h2>
+                <p class="subtitle">Manage your password and account security.</p>
+
+                <div class="form-group password-box">
+                    <label>Current Password</label>
+                    <input type="password" id="currentPassword" placeholder="Enter current password">
+                </div>
+
+                <div class="form-group password-box">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+                </div>
+
+                <div class="form-group password-box">
+                    <label>Confirm New Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                </div>
+
+                <button class="primary-btn" id="changePassword">Change Password</button>
+
+                <div class="setting-row security-row">
+                    <div>
+                        <h3>Two-Factor Authentication</h3>
+                        <p>Add an extra layer of security to your account.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="twoFactor">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREFERENCES -->
+        <section class="settings-section" id="preferences">
+            <div class="card">
+                <h2>Preferences</h2>
+                <p class="subtitle">Customize your financial dashboard settings.</p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Language</label>
+                        <select id="language">
+                            <option>English</option>
+                            <option>Hindi</option>
+                            <option>French</option>
+                            <option>Spanish</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Currency</label>
+                        <select id="currency">
+                            <option value="INR">Indian Rupee (₹)</option>
+                            <option value="USD">US Dollar ($)</option>
+                            <option value="EUR">Euro (€)</option>
+                            <option value="GBP">British Pound (£)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date Format</label>
+                        <select id="dateFormat">
+                            <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                            <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                            <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACCOUNT MANAGEMENT -->
+            <div class="card danger-card">
+                <h2>Account Management</h2>
+                <p class="subtitle">Manage or remove your account data.</p>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Export My Data</h3>
+                        <p>Download a copy of your settings.</p>
+                    </div>
+                    <button class="secondary-btn" id="exportData">Export</button>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Reset Settings</h3>
+                        <p>Restore settings to their default values.</p>
+                    </div>
+                    <button class="secondary-btn" id="resetSettings">Reset</button>
+                </div>
+
+                <div class="setting-row">
+                    <div>
+                        <h3>Delete Account</h3>
+                        <p>Remove your account from FinTrack.</p>
+                    </div>
+                    <button class="danger-btn" id="deleteAccount">Delete Account</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAVE BUTTONS -->
+        <div class="save-bar">
+            <button class="secondary-btn" id="discardChanges">Discard</button>
+            <button class="primary-btn" id="saveSettings">Save Changes</button>
+        </div>
+
+        <div id="toast" class="toast">Settings saved successfully!</div>
+
+    </main>
+</div>
+
+<script src="Settings.js"></script>
+</body>
+</html>
