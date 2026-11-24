@@ -1,0 +1,241 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Login</title>
+
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- SAME SIDEBAR AS DASHBOARD -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">₹</div>
+            <span>FinTrack</span>
+        </div>
+
+        <!-- Main Menu -->
+        <div class="menu-section">
+            <p class="menu-title">MAIN MENU</p>
+
+            <a href="Dashboard.html" class="menu-item">
+                <span class="menu-icon">⌂</span>
+                Dashboard
+            </a>
+
+            <a href="Transactions.html" class="menu-item">
+                <span class="menu-icon">↕</span>
+                Transactions
+            </a>
+
+            <a href="Accounts.html" class="menu-item">
+                <span class="menu-icon">▣</span>
+                Accounts
+            </a>
+
+            <a href="Analytics.html" class="menu-item">
+                <span class="menu-icon">◔</span>
+                Analytics
+            </a>
+        </div>
+
+        <!-- Planning -->
+        <div class="menu-section planning">
+
+            <p class="menu-title">PLANNING</p>
+
+            <a href="Budget.html" class="menu-item">
+                <span class="menu-icon">◉</span>
+                Budget
+            </a>
+
+            <a href="Goals.html" class="menu-item">
+                <span class="menu-icon">◎</span>
+                Goals
+            </a>
+
+            <a href="Settings.html" class="menu-item">
+                <span class="menu-icon">⚙</span>
+                Settings
+            </a>
+
+        </div>
+
+        <!-- Premium Box -->
+        <div class="premium-box">
+            <h3>Go Premium</h3>
+            <p>Unlock more features and insights.</p>
+            <button>Upgrade Now</button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN LOGIN AREA -->
+    <main class="main-content">
+
+        <div class="login-wrapper">
+
+            <!-- Left Welcome Section -->
+            <section class="welcome-section">
+
+                <p class="welcome-small">WELCOME BACK</p>
+
+                <h1>
+                    Manage your money
+                    <span>smarter.</span>
+                </h1>
+
+                <p class="welcome-text">
+                    Take control of your finances with FinTrack.
+                    Track your income, expenses, budgets and savings
+                    all in one place.
+                </p>
+
+                <div class="features">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">₹</div>
+                        <div>
+                            <h3>Track Finances</h3>
+                            <p>Monitor your income and expenses easily.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Manage Budgets</h3>
+                            <p>Stay on top of your monthly spending.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">↗</div>
+                        <div>
+                            <h3>Grow Savings</h3>
+                            <p>Track your goals and build better habits.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Login Card -->
+            <section class="login-card">
+
+                <div class="login-heading">
+                    <div class="login-logo">₹</div>
+
+                    <h2>Welcome back!</h2>
+
+                    <p>
+                        Login to your FinTrack account
+                    </p>
+                </div>
+
+
+                <!--
+                    When Login is clicked, this form opens Dashboard.html.
+                    Required fields make sure the user enters details.
+                -->
+                <form action="Dashboard.html" method="get">
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Remember + Forgot -->
+                    <div class="login-options">
+
+                        <label class="remember">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#">Forgot password?</a>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-button">
+                        Login to FinTrack
+                    </button>
+
+                </form>
+
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+
+                <!-- Demo Login -->
+                <form action="Dashboard.html" method="get">
+
+                    <button type="submit" class="demo-button">
+                        Continue with Demo Account
+                    </button>
+
+                </form>
+
+
+                <!-- Create Account -->
+                <p class="create-account">
+                    Don't have an account?
+                    <a href="#">Create Account</a>
+                </p>
+
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            © 2026 FinTrack. All rights reserved.
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```
