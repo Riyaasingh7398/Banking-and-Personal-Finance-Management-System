@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Transaction - FinTrack</title>
+    <link rel="stylesheet" href="AddTransaction.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <h1>Add Transaction</h1>
+                <p>Record your income and expenses easily.</p>
+            </div>
+
+            <a href="Transactions.html" class="back-btn">
+                ← Back to Transactions
+            </a>
+        </header>
+
+        <div class="form-card">
+
+            <div class="form-heading">
+                <h2>Transaction Details</h2>
+                <p>Enter the details of your new transaction.</p>
+            </div>
+
+            <form id="transactionForm">
+
+                <div class="form-group">
+                    <label>Transaction Name</label>
+                    <input type="text" id="transactionName"
+                        placeholder="e.g. Grocery Shopping" required>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Amount (₹)</label>
+                        <input type="number" id="amount"
+                            placeholder="Enter amount"
+                            min="0.01" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transaction Type</label>
+                        <select id="type" required>
+                            <option value="">Select Type</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                            <option value="Transfer">Transfer</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option>Food & Dining</option>
+                            <option>Shopping</option>
+                            <option>Travel</option>
+                            <option>Education</option>
+                            <option>Entertainment</option>
+                            <option>Salary</option>
+                            <option>Health</option>
+                            <option>Bills & Utilities</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account</label>
+                        <select id="account" required>
+                            <option value="">Select Account</option>
+                            <option>Savings Account</option>
+                            <option>Current Account</option>
+                            <option>Cash</option>
+                            <option>Credit Card</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="description"
+                        placeholder="Enter transaction details..."
+                        rows="4"></textarea>
+                </div>
+
+                <div class="button-group">
+
+                    <button type="submit" class="save-btn">
+                        Save Transaction
+                    </button>
+
+                    <button type="reset" class="reset-btn">
+                        Clear Form
+                    </button>
+
+                </div>
+
+                <p id="message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="AddTransaction.js"></script>
+</body>
+</html>
